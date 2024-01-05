@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def firstPage(request):
     # return HttpResponse("<h1>Views : First Page</h1>")
-    return render(request,"index.html")
+    return render(request,"first.html")
     
     
 def secondPage(request):
