@@ -21,6 +21,6 @@ from app_01 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.firstPage),
-    path('secondpage/', views.secondPage),
-    path('thirdpage/', views.thirdPage),
+    # path('secondpage/', views.secondPage),
+    # path('thirdpage/', views.thirdPage),
 ]
