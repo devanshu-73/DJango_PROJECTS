@@ -1,0 +1,104 @@
+﻿{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
+        <link rel="icon" href="https://thememakker.com/templates/Digital Society/hospital/laravel/public/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+        <title>Login - Oero Laravel</title>
+        <meta name="description" content="Oero Laravel">
+        <meta name="author" content="Oero Laravel">
+        
+        
+        
+        <link rel="stylesheet" href="{% static 'app\assets\plugins\bootstrap\css\bootstrap.min.css' %}">
+        
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{% static 'app\assets\css\main.css' %}">
+        <link rel="stylesheet" href="{% static 'app\assets\css\authentication.css' %}">
+        <link rel="stylesheet" href="{% static 'app\assets\css\color_skins.css' %}">
+
+        
+    </head>
+    
+    
+        <body class="theme-cyan authentication sidebar-collapse">
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+            <div class="container">        
+                <div class="navbar-translate n_logo">
+                    <a class="navbar-brand" href="javascript:void(0);" title="" target="_blank">Digital Society</a>
+                    <button class="navbar-toggler" type="button">
+                        <span class="navbar-toggler-bar bar1"></span>
+                        <span class="navbar-toggler-bar bar2"></span>
+                        <span class="navbar-toggler-bar bar3"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <div class="page-header-image" style="background-image:url({% static 'app\assets/images/login.jpg' %})"></div>
+
+                <div class="container">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+                <form class="form" method="" action="">
+                    <div class="header">
+                        <div class="logo-container">
+                            <img src="{% static 'app\assets\images\logo.svg' %}" alt="">
+                        </div>
+                        <h5>Log in</h5>
+                    </div>
+                    <div class="content">                                                
+                        <div class="input-group input-lg">
+                            <input type="text" class="form-control" placeholder="Enter User Name">
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-account-circle"></i>
+                            </span>
+                        </div>
+                        <div class="input-group input-lg">
+                            <input type="password" placeholder="Password" class="form-control">
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-lock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="footer text-center">
+                        <a href="..\dashboard\index.html" class="btn btn-primary btn-round btn-lg btn-block ">SIGN IN</a>
+                        <h5><a href="forgot-password.html" class="link">Forgot Password?</a></h5>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+            <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <ul>
+                            <li><a href="http://thememakker.com/contact/" target="_blank">Contact Us</a></li>
+                            <li><a href="http://thememakker.com/about/" target="_blank">About Us</a></li>
+                            <li><a href="javascript:void(0);">FAQ</a></li>
+                        </ul>
+                    </nav>
+                    <div class="copyright">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>,
+                        <span>Designed by <a href="http://thememakker.com/" style="color: red;" target="_blank">Devanshu</a></span>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+
+        <!-- Scripts -->
+        <script src="{% static 'app\assets\bundles\libscripts.bundle.js' %}"></script>    
+        <script src="{% static 'app\assets\bundles\vendorscripts.bundle.js' %}"></script>
+                
+    </body>
+</html>
