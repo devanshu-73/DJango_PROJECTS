@@ -52,6 +52,11 @@
                         </div>
                         <h5>Log in</h5>
                     </div>
+                    {% if e_msg %}
+                    <div class="alert alert-danger">
+                        {{e_msg}}
+                    </div>
+                    {% endif %}
                     <div class="content">                                                
                         <div class="input-group input-lg">
                             <input type="text" class="form-control" placeholder="Enter Email" name="email">
