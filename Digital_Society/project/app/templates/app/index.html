@@ -24,16 +24,16 @@
 
     <link
       rel="stylesheet"
-      href="static\assets\plugins\bootstrap\css\bootstrap.min.css"
+      href="{% static 'app\assets\plugins\bootstrap\css\bootstrap.min.css' %}"
     />
     <link
       rel="stylesheet"
-      href="static\assets\plugins\jvectormap\jquery-jvectormap-2.0.3.min.css"
+      href="{% static 'app\assets\plugins\jvectormap\jquery-jvectormap-2.0.3.min.css' %}"
     />
-    <link rel="stylesheet" href="static\assets\plugins\morrisjs\morris.min.css" />
+    <link rel="stylesheet" href="{% static 'app\assets\plugins\morrisjs\morris.min.css' %}" />
     <!-- Custom Css -->
-    <link rel="stylesheet" href="static\assets\css\main.css" />
-    <link rel="stylesheet" href="static\assets\css\color_skins.css" />
+    <link rel="stylesheet" href="{% static 'app\assets\css\main.css' %}" />
+    <link rel="stylesheet" href="{% static 'app\assets\css\color_skins.css' %}" />
   </head>
   <body class="theme-cyan">
     <!-- Page Loader -->
@@ -42,7 +42,7 @@
         <div class="m-t-30">
           <img
             class="zmdi-hc-spin"
-            src="static\assets\images\logo.svg"
+            src="{% static 'app\assets\images\logo.svg' %}"
             width="48"
             height="48"
             alt="Oreo"
@@ -60,7 +60,7 @@
             <a href="javascript:void(0);" class="bars"></a>
             <a class="navbar-brand" href="index.html"
               ><img
-                src="static\assets\images\logo.svg"
+                src="{% static 'app\assets\images\logo.svg' %}"
                 width="30"
                 alt="Oreo"
               /><span class="m-l-10">Oreo</span></a
@@ -106,7 +106,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar2.jpg"
+                        src="{% static 'app\assets\images\xs\avatar2.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -125,7 +125,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar3.jpg"
+                        src="{% static 'app\assets\images\xs\avatar3.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -145,7 +145,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar4.jpg"
+                        src="{% static 'app\assets\images\xs\avatar4.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -164,7 +164,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar5.jpg"
+                        src="{% static 'app\assets\images\xs\avatar5.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -183,7 +183,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar6.jpg"
+                        src="{% static 'app\assets\images\xs\avatar6.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -240,19 +240,19 @@
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar2.jpg"
+                            src="{% static 'app\assets\images\xs\avatar2.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar3.jpg"
+                            src="{% static 'app\assets\images\xs\avatar3.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar4.jpg"
+                            src="{% static 'app\assets\images\xs\avatar4.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
@@ -282,31 +282,31 @@
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar10.jpg"
+                            src="{% static 'app\assets\images\xs\avatar10.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar9.jpg"
+                            src="{% static 'app\assets\images\xs\avatar9.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar8.jpg"
+                            src="{% static 'app\assets\images\xs\avatar8.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar7.jpg"
+                            src="{% static 'app\assets\images\xs\avatar7.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar6.jpg"
+                            src="{% static 'app\assets\images\xs\avatar6.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
@@ -336,19 +336,19 @@
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar5.jpg"
+                            src="{% static 'app\assets\images\xs\avatar5.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar2.jpg"
+                            src="{% static 'app\assets\images\xs\avatar2.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
                         <li>
                           <img
-                            src="static\assets\images\xs\avatar7.jpg"
+                            src="{% static 'app\assets\images\xs\avatar7.jpg' %}"
                             alt="Avatar"
                           />
                         </li>
@@ -405,7 +405,7 @@
                 <div class="user-info">
                   <div class="image">
                     <a href="..\doctor\profile.html"
-                      ><img src="static\assets\images\profile_av.jpg" alt="User"
+                      ><img src="{% static 'app\assets\images\profile_av.jpg' %}" alt="User"
                     /></a>
                   </div>
                   <div class="detail">
@@ -697,7 +697,7 @@
                 <div class="user-info m-b-20 p-b-15">
                   <div class="image">
                     <a href="..\doctor\profile.html"
-                      ><img src="static\assets\images\profile_av.jpg" alt="User"
+                      ><img src="{% static 'app\assets\images\profile_av.jpg' %}" alt="User"
                     /></a>
                   </div>
                   <div class="detail">
@@ -1020,7 +1020,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar4.jpg"
+                        src="{% static 'app\assets\images\xs\avatar4.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1039,7 +1039,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar5.jpg"
+                        src="{% static 'app\assets\images\xs\avatar5.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1057,7 +1057,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar2.jpg"
+                        src="{% static 'app\assets\images\xs\avatar2.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1075,7 +1075,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar1.jpg"
+                        src="{% static 'app\assets\images\xs\avatar1.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1093,7 +1093,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar3.jpg"
+                        src="{% static 'app\assets\images\xs\avatar3.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1116,7 +1116,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar10.jpg"
+                        src="{% static 'app\assets\images\xs\avatar10.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1130,7 +1130,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar6.jpg"
+                        src="{% static 'app\assets\images\xs\avatar6.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1144,7 +1144,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar7.jpg"
+                        src="{% static 'app\assets\images\xs\avatar7.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1158,7 +1158,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar8.jpg"
+                        src="{% static 'app\assets\images\xs\avatar8.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1172,7 +1172,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar9.jpg"
+                        src="{% static 'app\assets\images\xs\avatar9.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1186,7 +1186,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar5.jpg"
+                        src="{% static 'app\assets\images\xs\avatar5.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1200,7 +1200,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar4.jpg"
+                        src="{% static 'app\assets\images\xs\avatar4.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1214,7 +1214,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar3.jpg"
+                        src="{% static 'app\assets\images\xs\avatar3.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1228,7 +1228,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar2.jpg"
+                        src="{% static 'app\assets\images\xs\avatar2.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1242,7 +1242,7 @@
                     <div class="media">
                       <img
                         class="media-object"
-                        src="static\assets\images\xs\avatar1.jpg"
+                        src="{% static 'app\assets\images\xs\avatar1.jpg' %}"
                         alt=""
                       />
                       <div class="media-body">
@@ -1263,7 +1263,7 @@
                 <div class="sl-item">
                   <img
                     class="user rounded-circle"
-                    src="static\assets\images\xs\avatar4.jpg"
+                    src="{% static 'app\assets\images\xs\avatar4.jpg' %}"
                     alt=""
                   />
                   <div class="sl-content">
@@ -1278,7 +1278,7 @@
                 <div class="sl-item">
                   <img
                     class="user rounded-circle"
-                    src="static\assets\images\xs\avatar5.jpg"
+                    src="{% static 'app\assets\images\xs\avatar5.jpg' %}"
                     alt=""
                   />
                   <div class="sl-content">
@@ -1294,7 +1294,7 @@
                 <div class="sl-item">
                   <img
                     class="user rounded-circle"
-                    src="static\assets\images\xs\avatar6.jpg"
+                    src="{% static 'app\assets\images\xs\avatar6.jpg' %}"
                     alt=""
                   />
                   <div class="sl-content">
@@ -1311,7 +1311,7 @@
                 <div class="sl-item">
                   <img
                     class="user rounded-circle"
-                    src="static\assets\images\xs\avatar7.jpg"
+                    src="{% static 'app\assets\images\xs\avatar7.jpg' %}"
                     alt=""
                   />
                   <div class="sl-content">
@@ -1351,7 +1351,7 @@
                   <a href="javascript:void(0)">
                     <i class="zmdi zmdi-image l-parpl"></i>
                     <div class="info">
-                      <h4>MG_4145.jpg</h4>
+                      <h4>MG_4145.jpg' %}</h4>
                       <small>5.6MB</small>
                     </div>
                   </a>
@@ -1360,7 +1360,7 @@
                   <a href="javascript:void(0)">
                     <i class="zmdi zmdi-image l-parpl"></i>
                     <div class="info">
-                      <h4>MG_4100.jpg</h4>
+                      <h4>MG_4100.jpg' %}</h4>
                       <small>5MB</small>
                     </div>
                   </a>
@@ -1397,16 +1397,16 @@
           <ul class="list-unstyled team-info margin-0">
             <li class="m-r-15"><h2>Dr. Team</h2></li>
             <li>
-              <img src="static\assets\images\xs\avatar2.jpg" alt="Avatar" />
+              <img src="{% static 'app\assets\images\xs\avatar2.jpg' %}" alt="Avatar" />
             </li>
             <li>
-              <img src="static\assets\images\xs\avatar3.jpg" alt="Avatar" />
+              <img src="{% static 'app\assets\images\xs\avatar3.jpg' %}" alt="Avatar" />
             </li>
             <li>
-              <img src="static\assets\images\xs\avatar4.jpg" alt="Avatar" />
+              <img src="{% static 'app\assets\images\xs\avatar4.jpg' %}" alt="Avatar" />
             </li>
             <li>
-              <img src="static\assets\images\xs\avatar6.jpg" alt="Avatar" />
+              <img src="{% static 'app\assets\images\xs\avatar6.jpg' %}" alt="Avatar" />
             </li>
             <li>
               <a href="javascript:void(0);" title="Add Member"
@@ -1420,7 +1420,7 @@
             <ul class="chat-scroll-list clearfix">
               <li class="left float-left">
                 <img
-                  src="static\assets\images\xs\avatar3.jpg"
+                  src="{% static 'app\assets\images\xs\avatar3.jpg' %}"
                   class="rounded-circle"
                   alt=""
                 />
@@ -1450,7 +1450,7 @@
               </li>
               <li class="left float-left">
                 <img
-                  src="static\assets\images\xs\avatar2.jpg"
+                  src="{% static 'app\assets\images\xs\avatar2.jpg' %}"
                   class="rounded-circle"
                   alt=""
                 />
@@ -1466,7 +1466,7 @@
               </li>
               <li class="left float-left">
                 <img
-                  src="static\assets\images\xs\avatar1.jpg"
+                  src="{% static 'app\assets\images\xs\avatar1.jpg' %}"
                   class="rounded-circle"
                   alt=""
                 />
@@ -1948,13 +1948,13 @@
                         <ul class="list-unstyled team-info margin-0 p-t-5">
                           <li>
                             <img
-                              src="..\..\..\..\..\..\35x35.png"
+                              src="{% static 'app\assets\images\doctors\member1.png' %}"
                               alt="Avatar"
                             />
                           </li>
                           <li>
                             <img
-                              src="..\..\..\..\..\..\35x35.png"
+                              src="{% static 'app\assets\images\doctors\member1.png' %}"
                               alt="Avatar"
                             />
                           </li>
@@ -2355,7 +2355,7 @@
                         <td>1</td>
                         <td>
                           <img
-                            src="..\..\..\..\..\..\35x35.png"
+                            src="{% static 'app\assets\images\doctors\member1.png' %}"
                             alt="Avatar"
                             class="rounded-circle"
                           />
@@ -2368,7 +2368,7 @@
                         <td>2</td>
                         <td>
                           <img
-                            src="..\..\..\..\..\..\35x35.png"
+                            src="{% static 'app\assets\images\doctors\member1.png' %}"
                             alt="Avatar"
                             class="rounded-circle"
                           />
@@ -2381,7 +2381,7 @@
                         <td>3</td>
                         <td>
                           <img
-                            src="..\..\..\..\..\..\35x35.png"
+                            src="{% static 'app\assets\images\doctors\member1.png' %}"
                             alt="Avatar"
                             class="rounded-circle"
                           />
@@ -2394,7 +2394,7 @@
                         <td>4</td>
                         <td>
                           <img
-                            src="..\..\..\..\..\..\35x35.png"
+                            src="{% static 'app\assets\images\doctors\member1.png' %}"
                             alt="Avatar"
                             class="rounded-circle"
                           />
@@ -2413,14 +2413,14 @@
       </div>
     </section>
     <!-- Scripts -->
-    <script src="static\assets\bundles\libscripts.bundle.js"></script>
-    <script src="static\assets\bundles\vendorscripts.bundle.js"></script>
+    <script src="{% static 'app\assets\bundles\libscripts.bundle.js' %}"></script>
+    <script src="{% static 'app\assets\bundles\vendorscripts.bundle.js' %}"></script>
 
-    <script src="static\assets\bundles\mainscripts.bundle.js"></script>
-    <script src="static\assets\bundles\morrisscripts.bundle.js"></script>
-    <script src="static\assets\bundles\jvectormap.bundle.js"></script>
-    <script src="static\assets\bundles\knob.bundle.js"></script>
-    <script src="static\assets\js\pages\index.js"></script>
+    <script src="{% static 'app\assets\bundles\mainscripts.bundle.js' %}"></script>
+    <script src="{% static 'app\assets\bundles\morrisscripts.bundle.js' %}"></script>
+    <script src="{% static 'app\assets\bundles\jvectormap.bundle.js' %}"></script>
+    <script src="{% static 'app\assets\bundles\knob.bundle.js' %}"></script>
+    <script src="{% static 'app\assets\js\pages\index.js' %}"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
