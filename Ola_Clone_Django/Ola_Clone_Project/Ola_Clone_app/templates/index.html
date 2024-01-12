@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,12 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ola Electric Clone By Dev_eloper</title>
 
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
-    <link rel="stylesheet" href="/3d-card-slider.css" />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="shortcut icon" href="img/favicon.png' %}" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -20,15 +18,21 @@
       referrerpolicy="no-referrer"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    {% comment %} CSS {% endcomment %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/3d-card-slider.css' %}" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
   </head>
 
@@ -37,7 +41,7 @@
       <!-- sec-1-start---------------------------------------- -->
       <div id="sec-1" class="position-relative overflow-hidden h-100 w-100">
         <img
-          src="/img/home-page.png"
+          src="{% static 'img/home-page.png' %}"
           alt="home-page"
           class="img-fluid overflow-hidden"
         />
@@ -54,7 +58,7 @@
                   href="#"
                 >
                   <img
-                    src="/img/logo_dark.webp"
+                    src="{% static 'img/logo_dark.webp' %}"
                     class="h-75 img-fluid"
                     alt="logo"
                   />
@@ -81,14 +85,14 @@
                           <a
                             class="nav-link text-black-50"
                             aria-current="page"
-                            href="/Ola-html/s1-pro.html"
+                            href="{% url 's1-pro' %}"
                             >S1 Pro</a
                           >
                         </li>
                         <li class="nav-item ms-5 me-5">
                           <a
                             class="nav-link text-black-50"
-                            href="/Ola-html/s1-new.html"
+                            href="{% url 's1-new' %}"
                             >S1</a
                           >
                         </li>
@@ -96,7 +100,7 @@
                         <li class="nav-item ms-5 me-5">
                           <a
                             class="nav-link text-black-50"
-                            href="/Ola-html/s1-air.html"
+                            href="{% url 's1-air' %}"
                             >S1 Air</a
                           >
                         </li>
@@ -226,13 +230,13 @@
             <!-- card---1-START -->
             <div class="card border-0 col-4">
               <img
-                src="/img/S1Pro_Scooty.webp"
+                src="{% static 'img/S1Pro_Scooty.webp' %}"
                 class="card-img-top"
                 alt="..."
               />
               <div class="card-body scooty1">
                 <img
-                  src="/img/home_product_s1_pro_new.svg"
+                  src="{% static 'img/home_product_s1_pro_new.svg"
                   class="img-fluid"
                   alt="..."
                 />
@@ -261,17 +265,21 @@
                 >Explore S1 Pro
                 <span
                   ><img
-                    src="/img/home_product_range_arrow_v1.svg"
+                    src="{% static 'img/home_product_range_arrow_v1.svg"
                     alt="" /></span
               ></a>
             </div>
             <!-- card---1-END -->
             <!-- card---2_START -->
             <div class="card border-0 col-4">
-              <img src="/img/S1_Scooty.webp" class="card-img-top" alt="..." />
+              <img
+                src="{% static 'img/S1_Scooty.webp' %}"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body scooty2">
                 <img
-                  src="/img/home_product_s1_new.svg"
+                  src="{% static 'img/home_product_s1_new.svg"
                   class="img-fluid"
                   alt="..."
                 />
@@ -300,7 +308,7 @@
                 >Explore S1
                 <span
                   ><img
-                    src="/img/home_product_range_arrow_v1.svg"
+                    src="{% static 'img/home_product_range_arrow_v1.svg"
                     alt="" /></span
               ></a>
             </div>
@@ -308,13 +316,13 @@
             <!-- card---3-START -->
             <div class="card border-0 col-4">
               <img
-                src="/img/S1Air_Scooty.webp"
+                src="{% static 'img/S1Air_Scooty.webp' %}"
                 class="card-img-top"
                 alt="..."
               />
               <div class="card-body scooty3">
                 <img
-                  src="/img/home_product_s1_air_new.svg"
+                  src="{% static 'img/home_product_s1_air_new.svg"
                   class="img-fluid"
                   alt="..."
                 />
@@ -343,7 +351,7 @@
                 >Explore S1 Air
                 <span
                   ><img
-                    src="/img/home_product_range_arrow_v1.svg"
+                    src="{% static 'img/home_product_range_arrow_v1.svg"
                     alt="" /></span
               ></a>
             </div>
@@ -367,7 +375,7 @@
                   <div class="row mb-5">
                     <img
                       class="img-fluid"
-                      src="/img/ola_hypercharger_txt_image_web.svg"
+                      src="{% static 'img/ola_hypercharger_txt_image_web.svg"
                       alt=""
                     />
                   </div>
@@ -376,7 +384,7 @@
                       Tick places off your bucket list. Our 100+ Hyperchargers
                       are ready for you.
                     </p>
-                    <!-- <div class="col-3"><img src="/img/support_Icon.webp" class="img-fluid" alt="..."></div> -->
+                    <!-- <div class="col-3"><img src="{% static 'img/support_Icon.webp' %}" class="img-fluid" alt="..."></div> -->
                   </div>
                 </div>
                 <div
@@ -385,7 +393,9 @@
                   <button class="btn text-white text-start fs-2">
                     Learn More
                     <span
-                      ><img src="/img/home_product_range_arrow_v1.svg" alt=""
+                      ><img
+                        src="{% static 'img/home_product_range_arrow_v1.svg"
+                        alt=""
                     /></span>
                   </button>
                 </div>
@@ -398,7 +408,7 @@
                     <div class="s3-b-right-care">
                       <img
                         class="img-fluid"
-                        src="/img/ola_care_txt_image_web.svg"
+                        src="{% static 'img/ola_care_txt_image_web.svg"
                         alt=""
                       />
                     </div>
@@ -408,7 +418,7 @@
                       Door-step service, pick and drop service. Always at your
                       service with Ola Care+
                     </p>
-                    <!-- <div class="col-3"><img src="/img/support_Icon.webp" class="img-fluid" alt="..."></div> -->
+                    <!-- <div class="col-3"><img src="{% static 'img/support_Icon.webp' %}" class="img-fluid" alt="..."></div> -->
                   </div>
                 </div>
                 <div
@@ -417,7 +427,9 @@
                   <button class="btn text-white text-start fs-2">
                     Learn More
                     <span
-                      ><img src="/img/home_product_range_arrow_v1.svg" alt=""
+                      ><img
+                        src="{% static 'img/home_product_range_arrow_v1.svg"
+                        alt=""
                     /></span>
                   </button>
                 </div>
@@ -431,7 +443,7 @@
       <!-- sec-4-start---------------------------------------- -->
       <div id="sec-4" class="h-100 w-100 position-relative">
         <img
-          src="/img/olaec_center_web_image.webp"
+          src="{% static 'img/olaec_center_web_image.webp' %}"
           class="img-fluid sec-4-img position-absolute top-0 end-0"
           alt=""
         />
@@ -448,7 +460,7 @@
                   More about Ola Experience Centres
                   <span
                     ><img
-                      src="/img/green_arrow_v1.svg"
+                      src="{% static 'img/green_arrow_v1.svg"
                       class="img-fluid"
                       alt=""
                   /></span>
@@ -477,7 +489,7 @@
                       >Schedule a Visit
                       <span class=""
                         ><img
-                          src="/img/home_product_range_arrow_v1.svg"
+                          src="{% static 'img/home_product_range_arrow_v1.svg"
                           class="img-fluid s4-arrow-img"
                           alt=""
                       /></span>
@@ -497,7 +509,7 @@
                       >Schedule a Visit
                       <span class=""
                         ><img
-                          src="/img/home_product_range_arrow_v1.svg"
+                          src="{% static 'img/home_product_range_arrow_v1.svg"
                           class="img-fluid s4-arrow-img"
                           alt=""
                       /></span>
@@ -517,7 +529,7 @@
                       >Schedule a Visit
                       <span class=""
                         ><img
-                          src="/img/home_product_range_arrow_v1.svg"
+                          src="{% static 'img/home_product_range_arrow_v1.svg"
                           class="img-fluid s4-arrow-img"
                           alt=""
                       /></span>
@@ -537,7 +549,7 @@
                       >Schedule a Visit
                       <span class=""
                         ><img
-                          src="/img/home_product_range_arrow_v1.svg"
+                          src="{% static 'img/home_product_range_arrow_v1.svg"
                           class="img-fluid s4-arrow-img"
                           alt=""
                       /></span>
@@ -557,7 +569,7 @@
                       >Schedule a Visit
                       <span class=""
                         ><img
-                          src="/img/home_product_range_arrow_v1.svg"
+                          src="{% static 'img/home_product_range_arrow_v1.svg"
                           class="img-fluid s4-arrow-img"
                           alt=""
                       /></span>
@@ -585,7 +597,9 @@
             <div class="col-5">
               <div class="sec-5-top-1">Rising petrol cost? <br />No sweat</div>
               <div class="d-flex align-items-center">
-                <div><img src="/img/home_rising_star.webp" alt="" /></div>
+                <div>
+                  <img src="{% static 'img/home_rising_star.webp' %}" alt="" />
+                </div>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
@@ -599,7 +613,9 @@
               </div>
               <hr class="bg-success w-50 ms-auto me-auto" />
               <div class="d-flex align-items-center">
-                <div><img src="/img/home_rising_star.webp" alt="" /></div>
+                <div>
+                  <img src="{% static 'img/home_rising_star.webp' %}" alt="" />
+                </div>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
@@ -615,12 +631,12 @@
                 class="btn mt-5 d-flex justify-content-center w-50 align-items-center"
               >
                 <span class="text-success fs-2">Calculate Savings &nbsp;</span
-                >&nbsp; <img src="/img/green_arrow_v1.svg" alt="" />
+                >&nbsp; <img src="{% static 'img/green_arrow_v1.svg" alt="" />
               </div>
             </div>
             <div class="col-7">
               <img
-                src="/img/Web_S1Pro_28042023.webp"
+                src="{% static 'img/Web_S1Pro_28042023.webp' %}"
                 class="img-fluid"
                 alt=""
               />
@@ -653,19 +669,19 @@
               <div class="row">
                 <div class="col-6">
                   <img
-                    src="/img/design_web_image_c1r1_310523.webp"
+                    src="{% static 'img/design_web_image_c1r1_310523.webp' %}"
                     class="img-fluid"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
                   <img
-                    src="/img/design_web_image_c2r1_010623.webp"
+                    src="{% static 'img/design_web_image_c2r1_010623.webp' %}"
                     class="img-fluid row"
                     alt=""
                   />
                   <img
-                    src="/img/design_web_image_c2r2_010623.webp"
+                    src="{% static 'img/design_web_image_c2r2_010623.webp' %}"
                     class="img-fluid row mt-4"
                     alt=""
                   />
@@ -696,7 +712,10 @@
                     class="text-black-50 text-decoration-none fs-2"
                   >
                     Learn more about Design
-                    <span><img src="/img/cta-green-arrow_v1.svg" alt="" /></span
+                    <span
+                      ><img
+                        src="{% static 'img/cta-green-arrow_v1.svg"
+                        alt="" /></span
                   ></a>
                 </div>
               </div>
@@ -705,19 +724,19 @@
               <div class="row">
                 <div class="col-6">
                   <img
-                    src="/img/digitaltech_web_image_c1r1_310523.webp"
+                    src="{% static 'img/digitaltech_web_image_c1r1_310523.webp' %}"
                     class="img-fluid"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
                   <img
-                    src="/img/digitaltech_web_image_c2r1_310523.webp"
+                    src="{% static 'img/digitaltech_web_image_c2r1_310523.webp' %}"
                     class="img-fluid row"
                     alt=""
                   />
                   <img
-                    src="/img/digitaltech_web_image_c2r2_310523.webp"
+                    src="{% static 'img/digitaltech_web_image_c2r2_310523.webp' %}"
                     class="img-fluid row mt-4"
                     alt=""
                   />
@@ -746,7 +765,10 @@
                     class="text-black-50 text-decoration-none fs-2"
                   >
                     Learn more about Digital Tech
-                    <span><img src="/img/cta-green-arrow_v1.svg" alt="" /></span
+                    <span
+                      ><img
+                        src="{% static 'img/cta-green-arrow_v1.svg"
+                        alt="" /></span
                   ></a>
                 </div>
               </div>
@@ -755,19 +777,19 @@
               <div class="row">
                 <div class="col-6">
                   <img
-                    src="/img/performance_web_image_c1r1_310523.webp"
+                    src="{% static 'img/performance_web_image_c1r1_310523.webp' %}"
                     class="img-fluid"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
                   <img
-                    src="/img/performance_web_image_c2r1_310523.webp"
+                    src="{% static 'img/performance_web_image_c2r1_310523.webp' %}"
                     class="img-fluid row"
                     alt=""
                   />
                   <img
-                    src="/img/home_tenet_performance_mods.webp"
+                    src="{% static 'img/home_tenet_performance_mods.webp' %}"
                     class="img-fluid row mt-4"
                     alt=""
                   />
@@ -798,7 +820,10 @@
                     class="text-black-50 text-decoration-none fs-2"
                   >
                     Learn more about Performance
-                    <span><img src="/img/cta-green-arrow_v1.svg" alt="" /></span
+                    <span
+                      ><img
+                        src="{% static 'img/cta-green-arrow_v1.svg"
+                        alt="" /></span
                   ></a>
                 </div>
               </div>
@@ -807,19 +832,19 @@
               <div class="row">
                 <div class="col-6">
                   <img
-                    src="/img/safety_web_image_c1r1_310523.webp"
+                    src="{% static 'img/safety_web_image_c1r1_310523.webp' %}"
                     class="img-fluid"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
                   <img
-                    src="/img/safety_web_image_c2r1_310523.webp"
+                    src="{% static 'img/safety_web_image_c2r1_310523.webp' %}"
                     class="img-fluid row"
                     alt=""
                   />
                   <img
-                    src="/img/safety_web_image_c2r2_310523.webp"
+                    src="{% static 'img/safety_web_image_c2r2_310523.webp' %}"
                     class="img-fluid row mt-4"
                     alt=""
                   />
@@ -850,7 +875,10 @@
                     class="text-black-50 text-decoration-none fs-2"
                   >
                     Learn more about Safety
-                    <span><img src="/img/cta-green-arrow_v1.svg" alt="" /></span
+                    <span
+                      ><img
+                        src="{% static 'img/cta-green-arrow_v1.svg"
+                        alt="" /></span
                   ></a>
                 </div>
               </div>
@@ -870,17 +898,29 @@
           <div class="s7-bottom row">
             <div class="row">
               <div class="col-3">
-                <img src="/img/good_for_you_1.webp" class="img-fluid" alt="" />
-              </div>
-              <div class="col-3">
-                <img src="/img/good_for_you_2.webp" class="img-fluid" alt="" />
-              </div>
-              <div class="col-3">
-                <img src="/img/good_for_you_3.webp" class="img-fluid" alt="" />
+                <img
+                  src="{% static 'img/good_for_you_1.webp' %}"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
               <div class="col-3">
                 <img
-                  src="/img/Good_scooter_gya_tel_lene.webp"
+                  src="{% static 'img/good_for_you_2.webp' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="col-3">
+                <img
+                  src="{% static 'img/good_for_you_3.webp' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="col-3">
+                <img
+                  src="{% static 'img/Good_scooter_gya_tel_lene.webp' %}"
                   class="img-fluid s7-img-4"
                   alt=""
                 />
@@ -920,7 +960,7 @@
       <!-- sec-8-start---------------------------------------- -->
       <div id="sec-8" class="position-relative">
         <img
-          src="/img/EndIceage_section_header_dweb_16042023.webp"
+          src="{% static 'img/EndIceage_section_header_dweb_16042023.webp' %}"
           class="img-fluid"
           alt=""
         />
@@ -985,7 +1025,11 @@
             </div>
           </div>
           <div>
-            <img src="/img/bikes_light.webp" class="img-fluid" alt="" />
+            <img
+              src="{% static 'img/bikes_light.webp' %}"
+              class="img-fluid"
+              alt=""
+            />
           </div>
           <div class="col-8 s9-h1 pb-5">
             Fasten Your SeatBelts
@@ -995,7 +1039,11 @@
             </div>
           </div>
           <div>
-            <img src="/img/endiceage_mob_car.webp" class="img-fluid" alt="" />
+            <img
+              src="{% static 'img/endiceage_mob_car.webp' %}"
+              class="img-fluid"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -1015,7 +1063,7 @@
               >
                 <div class="col-3">
                   <img
-                    src="/img/our-engineering-facts-header.webp"
+                    src="{% static 'img/our-engineering-facts-header.webp' %}"
                     class="s10-img img-fluid"
                     alt=""
                   />
@@ -1027,7 +1075,7 @@
               >
                 <div class="col-3">
                   <img
-                    src="/img/our-engineering-facts-header.webp"
+                    src="{% static 'img/our-engineering-facts-header.webp' %}"
                     class="s10-img img-fluid"
                     alt=""
                   />
@@ -1043,7 +1091,7 @@
               >
                 <div class="col-3">
                   <img
-                    src="/img/our-engineering-facts-header.webp"
+                    src="{% static 'img/our-engineering-facts-header.webp' %}"
                     class="s10-img img-fluid"
                     alt=""
                   />
@@ -1055,7 +1103,7 @@
               >
                 <div class="col-3">
                   <img
-                    src="/img/our-engineering-facts-header.webp"
+                    src="{% static 'img/our-engineering-facts-header.webp' %}"
                     class="s10-img img-fluid"
                     alt=""
                   />
@@ -1089,20 +1137,24 @@
           </div>
           <div class="row">
             <div class="col-4">
-              <img src="/img/revolution_c1.webp" class="img-fluid" alt="" />
+              <img
+                src="{% static 'img/revolution_c1.webp' %}"
+                class="img-fluid"
+                alt=""
+              />
             </div>
             <div class="col-4">
               <div class="row gy-5">
                 <div>
                   <img
-                    src="/img/revolution_c2r1.webp"
+                    src="{% static 'img/revolution_c2r1.webp' %}"
                     class="img-fluid"
                     alt=""
                   />
                 </div>
                 <div>
                   <img
-                    src="/img/revolution_c2r2.webp"
+                    src="{% static 'img/revolution_c2r2.webp' %}"
                     class="img-fluid"
                     alt=""
                   />
@@ -1110,7 +1162,11 @@
               </div>
             </div>
             <div class="col-4">
-              <img src="/img/revolution_c3.webp" class="img-fluid" alt="" />
+              <img
+                src="{% static 'img/revolution_c3.webp' %}"
+                class="img-fluid"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -1255,12 +1311,12 @@
       </div>
       <!-- sec-12-end---------------------------------------- -->
     </div>
-    <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-    <script src="/script.js"></script>
-    <script src="/cloud9carousel-master/jquery.cloud9carousel.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/cloud9carousel-master/jquery.cloud9carousel.js' %}"></script>
   </body>
 </html>

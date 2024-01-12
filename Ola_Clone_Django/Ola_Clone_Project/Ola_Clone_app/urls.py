@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from . import views 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('Ola_Clone_app.urls')),
+    path('', views.home, name='home'),
+    path('s1-pro/', views.s1_pro, name='s1-pro'),
+    path('s1-new/', views.s1_new, name='s1-new'),
+    path('s1-air/', views.s1_air, name='s1-air'),
 ]
