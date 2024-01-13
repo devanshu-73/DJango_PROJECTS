@@ -1,0 +1,202 @@
+{% extends 'app/index.html' %} 
+
+{% block content %}
+
+<section class="content home">
+  <div class="block-header">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-sm-12">
+        <h2>
+          Profile <small class="text-muted">Welcome to Digital Society</small>
+        </h2>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+        <button
+          class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10"
+          type="button"
+        >
+          <i class="zmdi zmdi-edit"></i>
+        </button>
+
+        <ul class="breadcrumb float-md-right">
+          <li class="breadcrumb-item">
+            <a href="..\dashboard\index.html"
+              ><i class="zmdi zmdi-home"></i> Digital Society</a
+            >
+          </li>
+          <li class="breadcrumb-item">Chairman</li>
+          <li class="breadcrumb-item active">Profile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row clearfix profile-page">
+      <div class="col-lg-4 col-md-12">
+        <div class="card profile-header">
+          <div class="body text-center">
+            <div class="profile-image">
+              <img src="{{cid.pic.url}}" alt="" />
+            </div>
+            <div>
+              <h4 class="m-b-0">
+                <strong>{{cid.firstname}}</strong> {{cid.lastname}}
+              </h4>
+              <span class="job_post">{{uid.role}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-md-12">
+        <div class="card">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#about"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#Account"
+                >Edit Profile</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane body active" id="about">
+              <h6>About Me</h6>
+              <hr />
+              <ul class="list-unstyled">
+                <li>
+                  <p><strong>Firstname :</strong> {{cid.firstname }}</p>
+                </li>
+                <li>
+                  <p><strong>Lastname:</strong>{{cid.lastname}}</p>
+                </li>
+                <li>
+                  <p><strong>Contact No:</strong>{{cid.contact}}</p>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane body" id="Account">
+              <form method="post" action="{% url 'change-password' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="email"
+                    value="{{uid.email}}"
+                    readonly
+                    disabled
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Current Password"
+                    name="currentpassword"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="New Password"
+                    name="newpassword"
+                  />
+                </div>
+                <input
+                  type="submit"
+                  class="btn btn-info btn-round"
+                  value="Save Changes"
+                />
+              </form>
+              <hr />
+              <form
+                method="post"
+                action="{% url 'change-profile' %}"
+                enctype="multipart/form-data"
+              >
+                {% csrf_token %}
+                <div class="row clearfix">
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="firstname"
+                        value="{{cid.firstname}}"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Last Name"
+                        name="lastname"
+                        value="{{cid.lastname}}"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Contact"
+                        name="contact"
+                        value="{{cid.contact}}"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="blockno"
+                        name="blockno"
+                        value="{{cid.blockno}}"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="houseno"
+                        name="houseno"
+                        value="{{cid.houseno}}"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <p><b>Upload Profile Picture</b></p>
+                    <div class="form-group">
+                      <input type="file" class="form-control" name="pic" />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <input
+                      type="submit"
+                      class="btn btn-primary btn-round"
+                      value="Save Changes"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
