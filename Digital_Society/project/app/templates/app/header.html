@@ -1,4 +1,3 @@
-
 {% load static %}
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
@@ -362,29 +361,26 @@
           <li>
             <div class="user-info">
               <div class="image">
-                <a href="..\doctor\profile.html"
-                  ><img
-                    src="{% static 'app\assets\images\profile_av.jpg' %}"
-                    alt="User"
+                <a href="{% url 'profile' %}"
+                  ><img src="{{cid.pic.url}}" alt="User"
                 /></a>
               </div>
               <div class="detail">
                 <h4>{{cid.firstname}}</h4>
-                <small>Dev_eloper</small>
+                <small>{{uid.role}}</small>
               </div>
             </div>
           </li>
           <li class="header">MAIN</li>
 
           <li class="active open">
-            <a href="index.html"
+            <a href="{% url 'home' %}"
               ><i class="zmdi zmdi-home"></i><span>Dashboard</span></a
             >
           </li>
           <li class="">
-            <a href="..\appointment\book-appointment.html"
-              ><i class="zmdi zmdi-calendar-check"></i
-              ><span>Appointment</span></a
+            <a href="{% url 'profile' %}"
+              ><i class="zmdi zmdi-home"></i><span>My Profile</span></a
             >
           </li>
           <li class="">
@@ -394,248 +390,35 @@
             >
             <ul class="ml-menu">
               <li class="">
-                <a href="..\doctor\doctors.html">All Society Member</a>
+                <a href="#">All Society Member</a>
               </li>
               <li class="">
-                <a href="..\doctor\add-doctor.html">Add Member</a>
-              </li>
-              <li class="">
-                <a href="..\doctor\profile.html">Member Profile</a>
+                <a href="{% url 'add-member' %}">Add Member</a>
               </li>
             </ul>
           </li>
           <li class="">
             <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-account-o"></i><span>Patients</span></a
+              ><i class="zmdi zmdi-account-o"></i><span>Notice</span></a
             >
             <ul class="ml-menu">
               <li class="">
-                <a href="..\patients\all-patients.html">All Patients</a>
+                <a href="..\patients\all-patients.html">All Notice</a>
               </li>
               <li class="">
-                <a href="..\patients\add-patients.html">Add Patient</a>
-              </li>
-              <li class="">
-                <a href="..\patients\patients-profile.html">Patient Profile</a>
-              </li>
-              <li class="">
-                <a href="..\patients\invoice.html">Invoice</a>
+                <a href="..\patients\add-patients.html">Add Notice</a>
               </li>
             </ul>
           </li>
           <li class="">
             <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span></a
+              ><i class="zmdi zmdi-balance-wallet"></i><span>Complaints</span></a
             >
             <ul class="ml-menu">
               <li class="">
-                <a href="..\payment\all-payment.html">All Payments</a>
-              </li>
-              <li class="">
-                <a href="..\payment\add-payment.html">Add Payment</a>
-              </li>
-              <li class="">
-                <a href="..\patients\invoice.html">Invoice</a>
+                <a href="..\payment\all-payment.html">All Complaints</a>
               </li>
             </ul>
-          </li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-label-alt"></i><span>Departments</span></a
-            >
-            <ul class="ml-menu">
-              <li class="">
-                <a href="..\departments\add-department.html">Add</a>
-              </li>
-              <li class="">
-                <a href="..\departments\all-departments.html"
-                  >All Departments</a
-                >
-              </li>
-              <li><a href="javascript:void(0);">Cardiology</a></li>
-              <li><a href="javascript:void(0);">Pulmonology</a></li>
-              <li><a href="javascript:void(0);">Gynecology</a></li>
-              <li><a href="javascript:void(0);">Neurology</a></li>
-              <li><a href="javascript:void(0);">Urology</a></li>
-              <li><a href="javascript:void(0);">Gastrology</a></li>
-              <li><a href="javascript:void(0);">Pediatrician</a></li>
-              <li><a href="javascript:void(0);">Laboratory</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-lock"></i><span>Authentication</span></a
-            >
-            <ul class="ml-menu">
-              <li><a href="..\authentication\login.html">Sign In</a></li>
-              <li><a href="..\authentication\register.html">Sign Up</a></li>
-              <li>
-                <a href="..\authentication\forgot-password.html"
-                  >Forgot Password</a
-                >
-              </li>
-              <li><a href="..\authentication\page404.html">Page 404</a></li>
-              <li><a href="..\authentication\page500.html">Page 500</a></li>
-              <li>
-                <a href="..\authentication\page-offline.html">Page Offline</a>
-              </li>
-              <li>
-                <a href="..\authentication\lockscreen.html">Locked Screen</a>
-              </li>
-            </ul>
-          </li>
-          <li class="header">EXTRA COMPONENTS</li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-blogger"></i><span>Blog</span></a
-            >
-            <ul class="ml-menu">
-              <li class="">
-                <a href="..\blog\dashboard.html">Dashboard</a>
-              </li>
-              <li class=""><a href="..\blog\new-post.html">New Post</a></li>
-              <li class=""><a href="..\blog\list.html">Blog List</a></li>
-              <li class=""><a href="..\blog\grid.html">Blog Grid</a></li>
-              <li class="">
-                <a href="..\blog\detail.html">Blog Detail</a>
-              </li>
-            </ul>
-          </li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-folder"></i><span>File Manager</span></a
-            >
-            <ul class="ml-menu">
-              <li class="">
-                <a href="..\file-manager\dashboard.html">All File</a>
-              </li>
-              <li class="">
-                <a href="..\file-manager\documents.html">Documents</a>
-              </li>
-              <li class="">
-                <a href="..\file-manager\media.html">Media</a>
-              </li>
-              <li class="">
-                <a href="..\file-manager\image.html">Images</a>
-              </li>
-            </ul>
-          </li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-apps"></i><span>App</span></a
-            >
-            <ul class="ml-menu">
-              <li class=""><a href="..\app\inbox.html">Inbox</a></li>
-              <li class=""><a href="..\app\chat.html">Chat</a></li>
-              <li class="">
-                <a href="..\app\contact-list.html">Contact list</a>
-              </li>
-            </ul>
-          </li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a
-            >
-            <ul class="ml-menu">
-              <li class="">
-                <a href="..\widgets\apps.html">Apps Widgetse</a>
-              </li>
-              <li class="">
-                <a href="..\widgets\data.html">Data Widgetse</a>
-              </li>
-            </ul>
-          </li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-copy"></i><span>Sample Pages</span></a
-            >
-            <ul class="ml-menu">
-              <li class="">
-                <a href="..\pages\blank-page.html">Blank Page</a>
-              </li>
-              <li class=""><a href="..\pages\rtl.html">RTL Support</a></li>
-              <li class="">
-                <a href="..\pages\image-gallery.html">Image Gallery</a>
-              </li>
-              <li class=""><a href="..\pages\profile.html">Profile</a></li>
-              <li class="">
-                <a href="..\pages\timeline.html">Timeline</a>
-              </li>
-              <li class="">
-                <a href="..\pages\invoices.html">Invoices</a>
-              </li>
-              <li class="">
-                <a href="..\pages\search-results.html">Search Results</a>
-              </li>
-            </ul>
-          </li>
-          <li class="">
-            <a href="javascript:void(0);" class="menu-toggle"
-              ><i class="zmdi zmdi-swap-alt"></i
-              ><span>User Interface (UI)</span></a
-            >
-            <ul class="ml-menu">
-              <li class=""><a href="..\ui\ui-kit.html">UI KIT</a></li>
-              <li class=""><a href="..\ui\alerts.html">Alerts</a></li>
-              <li class=""><a href="..\ui\collapse.html">Collapse</a></li>
-              <li class=""><a href="..\ui\colors.html">Colors</a></li>
-              <li class=""><a href="..\ui\dialogs.html">Dialogs</a></li>
-              <li class=""><a href="..\ui\icons.html">Icons</a></li>
-              <li class="">
-                <a href="..\ui\list-group.html">List Group</a>
-              </li>
-              <li class="">
-                <a href="..\ui\media-object.html">Media Object</a>
-              </li>
-              <li class=""><a href="..\ui\modals.html">Modals</a></li>
-              <li class="">
-                <a href="..\ui\notifications.html">Notifications</a>
-              </li>
-              <li class="">
-                <a href="..\ui\progressbars.html">Progress Bars</a>
-              </li>
-              <li class="">
-                <a href="..\ui\range-sliders.html">Range Sliders</a>
-              </li>
-              <li class="">
-                <a href="..\ui\sortable-nestable.html">Sortable Nestable</a>
-              </li>
-              <li class=""><a href="..\ui\tabs.html">Tabs</a></li>
-              <li class=""><a href="..\ui\waves.html">Waves</a></li>
-            </ul>
-          </li>
-          <li class="header">Extra</li>
-          <li>
-            <div class="progress-container progress-primary m-t-10">
-              <span class="progress-badge">Traffic this Month</span>
-              <div class="progress">
-                <div
-                  class="progress-bar progress-bar-warning"
-                  role="progressbar"
-                  aria-valuenow="67"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 67%"
-                >
-                  <span class="progress-value">67%</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress-container progress-info">
-              <span class="progress-badge">Server Load</span>
-              <div class="progress">
-                <div
-                  class="progress-bar progress-bar-warning"
-                  role="progressbar"
-                  aria-valuenow="86"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  style="width: 86%"
-                >
-                  <span class="progress-value">86%</span>
-                </div>
-              </div>
-            </div>
           </li>
         </ul>
       </div>
