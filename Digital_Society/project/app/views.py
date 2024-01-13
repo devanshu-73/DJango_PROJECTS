@@ -1,6 +1,17 @@
 from django.shortcuts import render,HttpResponseRedirect
 from .models import * 
-from django.urls import reverse 
+from django.urls import reverse
+import random
+from .utils import * 
+
+"""
+Django ORM 
+
+get() : fetch data from model and return an object but only single records 
+    if there are multiple records found with given condition it will thrown an exception 
+
+"""
+
 # Create your views here.
 
 def home (request):
@@ -22,22 +33,17 @@ def login (request):
         if request.POST:
             try:
                 p_email = request.POST["email"]
-                print("------------------>>>>  Email :",p_email)
                 p_password = request.POST["password"]
-                print("------------------>>>>  Password :",p_password)
                 uid = User.objects.get(email = p_email,password = p_password)
-                print("------------------>>>>  Uid :",uid)
                 cid = Chairman.objects.get(userid = uid)
-                print("------------------>>>>  FirstName :",cid.firstname)
-                print("------------------>>>>  LastName :",cid.lastname)
-                
                 request.session['email']=uid.email
+                print("------------------>>>>  Uid :",uid)
                 return HttpResponseRedirect(reverse('home'))
-                # context = {
-                #     'uid':uid,
-                #     'cid':cid,
-                # }
-                # return render(request,'app/index.html',context)
+            
+                # print("------------------>>>>  Password :",p_password)
+                # print("------------------>>>>  Email :",p_email)
+                # print("------------------>>>>  FirstName :",cid.firstname)
+                # print("------------------>>>>  LastName :",cid.lastname)
                 
                 # return index(request) # self practice...
             except:
@@ -55,13 +61,9 @@ def logout(request):
         return HttpResponseRedirect(reverse('login'))
     else:
         return HttpResponseRedirect(reverse('login'))
-       
-        
-        
-        
-        
-        
 
+# ============================================================================================
+# ============================================================================================
 # ------------------------------------------------
 # def home (request,msg=None):
     # e_msg = {}
