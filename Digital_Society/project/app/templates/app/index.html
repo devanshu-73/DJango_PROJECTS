@@ -50,7 +50,7 @@
             src="{% static 'app\assets\images\logo.svg' %}"
             width="48"
             height="48"
-            alt="Oreo"
+            alt="Home"
           />
         </div>
         <p>Please wait...</p>
@@ -63,12 +63,12 @@
         <li>
           <div class="navbar-header">
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"
+            <a class="navbar-brand" href="{% url 'home' %}"
               ><img
                 src="{% static 'app\assets\images\logo.svg' %}"
                 width="30"
-                alt="Oreo"
-              /><span class="m-l-10">Oreo</span></a
+                alt="Home"
+              /><span class="m-l-10">Home</span></a
             >
           </div>
         </li>
@@ -392,7 +392,7 @@
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#dashboard"
-            ><i class="zmdi zmdi-home m-r-5"></i>Oreo</a
+            ><i class="zmdi zmdi-home m-r-5"></i>Home</a
           >
         </li>
         <li class="nav-item">
@@ -471,7 +471,7 @@
         <div class="tab-pane stretchLeft" id="user">
           <div class="menu">
             <ul class="list">
-              <li>
+              <li>  
                 <div class="user-info m-b-20 p-b-15">
                   <div class="image">
                     <a href="{% url 'profile'%}"
@@ -1334,7 +1334,7 @@
 
             <ul class="breadcrumb float-md-right">
               <li class="breadcrumb-item">
-                <a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a>
+                <a href="{% url 'home' %}"><i class="zmdi zmdi-home"></i> Home</a>
               </li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ul>
