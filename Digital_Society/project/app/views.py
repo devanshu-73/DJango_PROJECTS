@@ -57,7 +57,6 @@ def logout(request):
     if 'email' in request.session:
         del request.session['email']
         return HttpResponseRedirect(reverse('login'))
-        # return render(request,'app/login.html')
     else:
         return HttpResponseRedirect(reverse('login'))
 
