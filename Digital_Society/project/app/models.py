@@ -26,4 +26,3 @@ class Member(models.Model):
     bloodgroup = models.CharField(max_length=3)
     vehical_details = models.CharField(max_length=20)
     pic = models.FileField(upload_to="media/upload",default="default.png")
-    # pic = models.FileField(upload_to="static/images/doctors/",default="member6.png")

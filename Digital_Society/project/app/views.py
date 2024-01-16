@@ -73,7 +73,6 @@ def profile(request):
     else:
         return HttpResponseRedirect(reverse('login'))
     
-
 def add_member(request):
     if "email" in request.session:
         uid = User.objects.get(email = request.session['email'])
@@ -116,7 +115,6 @@ def add_member(request):
         }
         return render(request,"app/addMember.html",context)
  
-
 def change_password(request):
     if "email" in request.session:
         uid = User.objects.get(email = request.session['email'])
