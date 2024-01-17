@@ -11,7 +11,6 @@ get() : fetch data from model and return an object but only single records
     if there are multiple records found with given condition it will thrown an exception 
 
 """
-
 # Create your views here.
 
 def home (request):
@@ -82,7 +81,7 @@ def add_member(request):
             email = request.POST['email']
             contact = request.POST['contact']
             firstname = request.POST['firstname']
-            l1 = ["2w334d","43rsd","9as23","9ds03","ds832d"]
+            l1 = ["cds33frr","dsc323vs","fdv24bb","nb534vdf","mn345bgf"]
             password = random.choice(l1)+email[3:6]+contact[4:7]
             muid = User.objects.create(email = request.POST['email'],password = password,role="member") 
             if muid:
