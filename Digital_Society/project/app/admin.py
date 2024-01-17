@@ -5,7 +5,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('email','role','isActive','created_at')
 
 class ChairmanAdmin(admin.ModelAdmin):
-    list_display = ('firstname','lastname')
+    list_display = ('firstname','lastname','contact')
 class MemberAdmin(admin.ModelAdmin):
     list_display = ('firstname','lastname','contact','blockno','houseno')
 
