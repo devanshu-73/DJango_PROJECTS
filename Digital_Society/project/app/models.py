@@ -31,4 +31,13 @@ class Member(models.Model):
     pic = models.FileField(upload_to="media/upload",default="default.png")
 
 
+class Notice(models.Model):
+    notice_title = models.CharField(max_length=50)
+    notice_description = models.TextField()
+    pic = models.FileField(upload_to="upload",null=True,blank=True)
+    video = models.FileField(upload_to="videos",verbose_name="noticeclip",blank=True,null=True)
+    created_at = models.DateTimeField(auto_now=True)
+
+
+
     

@@ -6,10 +6,14 @@ class UserAdmin(admin.ModelAdmin):
 
 class ChairmanAdmin(admin.ModelAdmin):
     list_display = ('firstname','lastname','contact')
+
 class MemberAdmin(admin.ModelAdmin):
     list_display = ('firstname','lastname','contact','blockno','houseno')
+class NoticeAdmin(admin.ModelAdmin):
+    list_display = ('notice_title','created_at')
 
 # Register your models here.
 admin.site.register(User,UserAdmin)
 admin.site.register(Chairman,ChairmanAdmin)
 admin.site.register(Member,MemberAdmin)
+admin.site.register(Notice,NoticeAdmin)
