@@ -5,4 +5,4 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('name','subjects','gender')
 
 # Register your models here.
-admin.site.register(User,UserAdmin)
+admin.site.register(User_details,UserAdmin)
