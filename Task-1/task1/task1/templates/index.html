@@ -13,60 +13,78 @@
   </head>
   <body>
     <div class="container">
-      <form>
+      <form class="form" method="post" action="{% url 'dashboard' %}">
+        {% csrf_token %}
         <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="password" class="form-control" id="name" name="name" />
+          <label for="name" class="form-label"><h3>Name</h3></label>
+          <input type="text" class="form-control" id="name" name="name" />
+        </div>
+
+        <label class="form-label">
+          <h3>Choose your Subject</h3>
+        </label>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="c" name="subject[]" value="c" />
+          <label class="form-check-label" for="c">C</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="c++" name="subject[]" value="c++" />
+          <label class="form-check-label" for="c++">C++</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="python" name="subject[]" value="python" />
+          <label class="form-check-label" for="python">Python</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="js" name="subject[]" value="js" />
+          <label class="form-check-label" for="js">JS</label>
+        </div>
+
+        <label class="form-label mt-3"><h3>Choose your Gender</h3></label>
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio1"
+            name="gender"
+            value="male"
+          />
+          <label class="form-check-label" for="radio1">Male</label>
         </div>
         <div class="form-check">
-          <label for="name" class="form-label">Choose your Subject</label>
-
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" />
-            <label class="form-check-label">C</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" />
-            <label class="form-check-label">C++</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" />
-            <label class="form-check-label">Python</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" />
-            <label class="form-check-label">JS</label>
-          </div>
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio2"
+            name="gender"
+            value="female"
+          />
+          <label class="form-check-label" for="radio2">Female</label>
         </div>
-        <div class="form-check">
-          <label for="name" class="form-label">Choose your Gender</label>
 
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" />
-            <label class="form-check-label">Male</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" />
-            <label class="form-check-label">Female</label>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
       </form>
+
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">SrNo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.subject}}</td>
+            <td>{{user.gender}}</td>
+            <td>
+              <button class="btn btn-success">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>

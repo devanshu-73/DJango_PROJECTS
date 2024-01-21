@@ -4,5 +4,6 @@ from django.db import models
 
 class User(models.Model):
     name = models.CharField(max_length=20)
-    subject = models.CharField(max_length=40)
-    gender = models.BooleanField(max_length=40)
+    subject = models.CharField(max_length=20)
+    gender = models.CharField(max_length=10)
+ 
