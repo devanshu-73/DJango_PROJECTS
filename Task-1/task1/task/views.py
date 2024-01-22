@@ -1,8 +1,8 @@
 # views.py
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from .models import User_details
 from django.urls import reverse
-from django.http import JsonResponse
+
 
 def dashboard(request):
     if request.POST:
@@ -28,15 +28,13 @@ def delete_user(request,srno):
     user_no.delete()  # delete 
     return HttpResponseRedirect(reverse("dashboard"))
 
-def update_user(request):
-    if request.method == 'POST':
-        user_id = request.POST.get('id')
-        user = User_details.objects.get(id=id)
-
+def update_user(request, srno):
+    try:
+        user = get_object_or_404(User_details, id=srno)
+        print("====user", user.id)
+        print("====user", user.name)
+        print("====user", user.subjects)
         context = {'user': user}
-        user.save()
         return render(request, 'editpage.html', context)
-
-    # Handle cases where the view is accessed directly without a POST or GET request
-    return HttpResponseRedirect(reverse('dashboard'))
-    
+    except Exception as e:
+        print(f"Error: {e}")
