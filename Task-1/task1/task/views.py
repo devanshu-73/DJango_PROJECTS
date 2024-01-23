@@ -15,21 +15,25 @@ def dashboard(request):
             'user_details':user_details
         }
         return render(request, 'index.html', context)
-    return render(request, 'index.html')
+    user_details = User_details.objects.all()
+    context={
+        'user_details':user_details
+    }
+    return render(request, 'index.html',context)
 
 def delete_user(request,srno):
-    user_no = User_details.objects.get(id = srno)
+    user_no = User_details.objects.get(id = srno).delete()  # delete 
     print("===============>",user_no)
-    user_no.delete()  # delete 
-    return HttpResponseRedirect(reverse("dashboard"))
+    user_details = User_details.objects.all()
+    context={
+        'user_details':user_details
+    }
+    return HttpResponseRedirect(reverse("dashboard"), context)
 
 def update_user(request, srno):
-    try:
-        user = get_object_or_404(User_details, id=srno)
-        print("====user", user.id)
-        print("====user", user.name)
-        print("====user", user.subjects)
-        context = {'user': user}
-        return render(request, 'editpage.html', context)
-    except Exception as e:
-        print(f"Error: {e}")
+    user = get_object_or_404(User_details, id=srno)    
+    context = {'user': user}
+    return render(request, '', context)
+                                                    # print("====user", user.id)
+                                                    # print("====user", user.name)
+                                                    # print("====user", user.subjects)
