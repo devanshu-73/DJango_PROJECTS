@@ -15,13 +15,8 @@ def dashboard(request):
             'user_details':user_details
         }
         return render(request, 'index.html', context)
-    else:
-        user_details = User_details.objects.all()
-        context={
-            'user_details':user_details
-        }
-        return render(request, 'index.html', context)
-    
+    return render(request, 'index.html')
+
 def delete_user(request,srno):
     user_no = User_details.objects.get(id = srno)
     print("===============>",user_no)
