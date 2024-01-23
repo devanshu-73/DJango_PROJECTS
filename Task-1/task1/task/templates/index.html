@@ -245,20 +245,7 @@
     </div>
 
     {% endblock %}
-    <script>
-      function editUser(id, name, subjects, gender) {
-        document.getElementById('editUserId').value = id;
-        document.getElementById('name').value = name;
-    
-        // Assuming subjects is a comma-separated string
-        subjects.split(',').forEach(subject => {
-          document.getElementById(subject).checked = true;
-        });
-    
-        document.querySelector(`input[name="gender"][value="${gender}"]`).checked = true;
-      }
-    </script>
-    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
