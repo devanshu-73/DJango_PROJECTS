@@ -20,6 +20,6 @@ from . import views
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
     path('delete-user/<int:srno>', views.delete_user, name='delete-user'),
-    path('update-user/<int:srno>', views.update_user, name='update-user'),
+    path('update-user/<int:srno>/', views.update_user, name='update-user'),
 ]
    

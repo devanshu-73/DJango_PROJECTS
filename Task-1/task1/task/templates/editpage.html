@@ -1,0 +1,77 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container col-3 d-flex justify-center align-items-center">
+  <form class="form" method="post" action="{% url 'update-user' user.id %}">
+    <h1>Edit User Details</h1>
+    <hr />
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label"><h3>Name</h3></label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        value="{{ user.name }}"
+        name="name"
+      />
+    </div>
+    <label class="form-label">
+      <h3>Choose your Subject</h3>
+    </label>
+    {% for subject in subs %}
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="{{ subject }}"
+          name="subject[]"
+          value="{{ subject }}"
+          {% if subject in user.subjects %}
+            checked
+          {% endif %}
+        />
+        <label class="form-check-label" for="{{ subject }}">{{ subject|title }}</label>
+      </div>
+    {% endfor %}
+
+    <label class="form-label mt-3"><h3>Choose your Gender</h3></label>
+    <div class="form-check">
+      <input
+        type="radio"
+        class="form-check-input"
+        id="radio1"
+        name="gender"
+        value="male"
+        {% if user.gender == 'male' %}
+          checked
+        {% endif %}
+      />
+      <label class="form-check-label" for="radio1">Male</label>
+    </div>
+    <div class="form-check">
+      <input
+        type="radio"
+        class="form-check-input"
+        id="radio2"
+        name="gender"
+        value="female"
+        {% if user.gender == 'female' %}
+          checked
+        {% endif %}
+      />
+      <label class="form-check-label" for="radio2">Female</label>
+    </div>
+    <div class="modal-footer">
+        <a
+        type="button"
+        class="btn btn-danger"
+        href="{% url 'dashboard' %}"
+        >Close</a
+      >
+      <button type="submit" class="btn btn-success">Save Details</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
