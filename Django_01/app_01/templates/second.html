@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Second Page</title>
-  </head>
-  <body>
-    <div>
-      <h1>Hello From Second Page</h1>
-      <div>
-        <button><a href="/">First Page</a></button>
-        <button><a href="/thirdpage">Third Page</a></button>
-      </div>
-    </div>
-  </body>
-</html>
+{% extends "index.html" %}
+{% block content %}
+<h1>Hello From Second Page</h1>
+<div>
+  <button><a href="/">First Page</a></button>
+  <button><a href="/thirdpage">Third Page</a></button>
+</div>
+{% endblock %}
