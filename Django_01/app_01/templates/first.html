@@ -7,11 +7,13 @@
   </head>
   <body>
     <div>
+      {% block content %}
       <h1>Hello From First Page</h1>
       <div>
         <button><a href="/secondpage">Second Page</a></button>
         <button><a href="/thirdpage">Third Page</a></button>
       </div>
+      {% endblock %}
     </div>
   </body>
 </html>
