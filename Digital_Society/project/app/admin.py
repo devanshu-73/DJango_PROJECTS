@@ -11,9 +11,12 @@ class MemberAdmin(admin.ModelAdmin):
     list_display = ('firstname','lastname','contact','blockno','houseno')
 class NoticeAdmin(admin.ModelAdmin):
     list_display = ('notice_title','created_at')
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('firstname','lastname')
 
 # Register your models here.
 admin.site.register(User,UserAdmin)
 admin.site.register(Chairman,ChairmanAdmin)
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Notice,NoticeAdmin)
+admin.site.register(Student,StudentAdmin)
