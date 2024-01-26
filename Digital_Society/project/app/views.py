@@ -20,7 +20,7 @@ get() : fetch data from model and return an object but only single records
 # Create your views here.
 # ============================================================================
 
-@api_view(['GET','POST','PUT','DELETE'])
+# @api_view(['GET','POST','PUT','DELETE'])
 # def studentgetdata(request):
     # try:
         # if request.POST:
