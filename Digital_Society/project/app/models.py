@@ -37,7 +37,8 @@ class Notice(models.Model):
     pic = models.FileField(upload_to="upload",null=True,blank=True)
     video = models.FileField(upload_to="videos",verbose_name="noticeclip",blank=True,null=True)
     created_at = models.DateTimeField(auto_now=True)
-
-
-
+class Student(models.Model):
+    firstname = models.CharField(max_length = 20)
+    lastname = models.CharField(max_length=20)
+    
     
