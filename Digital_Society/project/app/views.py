@@ -17,7 +17,6 @@ get() : fetch data from model and return an object but only single records
     if there are multiple records found with given condition it will thrown an exception 
 
 """
-# Create your views here.
 # ============================================================================
 
 # @api_view(['GET','POST','PUT','DELETE'])
@@ -27,6 +26,9 @@ get() : fetch data from model and return an object but only single records
             # sdata = Student
 
 # ============================================================================
+
+# Create your views here.
+
 def home (request):
     if 'email' in request.session :
         uid = User.objects.get(email = request.session['email'])
