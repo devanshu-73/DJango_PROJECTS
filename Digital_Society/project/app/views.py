@@ -1,8 +1,14 @@
 from django.shortcuts import render,HttpResponseRedirect
-from .models import * 
 from django.urls import reverse
 import random
 from .utils import * 
+
+# Api Purpose
+
+from .models import *
+from .serializers import StudentSerializer
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 """
 Django ORM 
@@ -12,7 +18,15 @@ get() : fetch data from model and return an object but only single records
 
 """
 # Create your views here.
+# ============================================================================
 
+@api_view(['GET','POST','PUT','DELETE'])
+def studentgetdata(request):
+    try:
+        if request.POST:
+            sdata = Student
+
+# ============================================================================
 def home (request):
     if 'email' in request.session :
         uid = User.objects.get(email = request.session['email'])
