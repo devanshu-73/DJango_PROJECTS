@@ -9,6 +9,8 @@ def firstPage(request):
 def secondPage(request):
     context={'page':["First Page","Second Page","Third Page"]}
     return render(request,"second.html",context)
+    # return HttpResponse("<h1>Views : Second Page</h1>")
 def thirdPage(request):
     context={'page':["First Page","Second Page","Third Page"]}
     return render(request,"third.html",context)
+    # return HttpResponse("<h1>Views : Third Page</h1>")
