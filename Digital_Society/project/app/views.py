@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponseRedirect
+from django.shortcuts import render,HttpResponseRedirect,redirect
 from django.urls import reverse
 import random
 from .utils import * 
@@ -53,13 +53,14 @@ def login (request):
                 cid = Chairman.objects.get(userid = uid)
                 request.session['email']=uid.email
                 return HttpResponseRedirect(reverse('home'))
-            
+
                 # print("------------------>>>>  Password :",p_password)
                 # print("------------------>>>>  Email :",p_email)
                 # print("------------------>>>>  Uid :",uid)
                 # print("------------------>>>>  FirstName :",cid.firstname)
                 # print("------------------>>>>  LastName :",cid.lastname)
                 # return index(request) # self practice...
+
             except Exception as e:
                 msg = "Invalid Email Or Password"
                 return render(request,'app/login.html',{'e_msg':msg})
@@ -87,7 +88,23 @@ def profile(request):
     else:
         return HttpResponseRedirect(reverse('login'))
 
- 
+def firstTimeLogin(request):
+   if request.POST:
+      user=User.objects.get(email=request.POST.get('email'))
+      print("=========>>> Email :",user)
+            
+      password=request.POST.get('password')
+      if password is not None and password != "":
+         user.password=password
+         user.isActive=True
+         user.save()
+         w_msg="Password Changed Successfully"
+         return render(request, "myapp/login.html",{'w_msg':w_msg})
+      else:
+         msg="Pls Fillup The Fields"
+         return render(request, 'myapp/firstTimeLogin.html',{'msg':msg,"user":user})
+   return redirect('login')
+
 def change_password(request):
     if "email" in request.session:
         uid = User.objects.get(email = request.session['email'])
@@ -171,7 +188,6 @@ def add_member(request):
         }
         return render(request,"app/addMember.html",context)
 
-        
 def all_member(request):
     if "email" in request.session:
         uid = User.objects.get(email = request.session['email'])
@@ -224,6 +240,7 @@ def add_notice(request):
                 'cid' : cid,
             }
             return render(request,"app/addNotice.html",context)
+        
 # ============================================================================================
 # ============================================================================================
 # ------------------------------------------------

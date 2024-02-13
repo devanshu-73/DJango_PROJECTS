@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,13 +48,16 @@
         <div class="container">
             <div class="col-md-12 content-center">
                 <div class="card-plain">
-                    <form class="form" method="post" action="{% url "login" %}">
+                    <form class="form" method="post" action="{% url "firstTimeLogin" %}">
                         {% csrf_token %}
                         <div class="header">
                             <div class="logo-container">
                                 <img src="{% static 'myapp\assets\images\logo.svg' %}" alt="">
                             </div>
                             <h5>Log in</h5>
+                            <div class="alert alert-info" role="alert">
+                                You are login for the first Time<br>Pls Change Your Password
+                            </div>
                             {% if msg %}
                             <div class="alert alert-danger" role="alert">
                                 {{msg}}
@@ -67,12 +70,7 @@
                             {% endif %}
                         </div>
                         <div class="content">
-                            <div class="input-group input-lg">
-                                <input type="email" class="form-control" placeholder="Enter Email" name="email">
-                                <span class="input-group-addon">
-                                    <i class="zmdi zmdi-account-circle"></i>
-                                </span>
-                            </div>
+                            <input type="hidden" class="form-control" placeholder="Enter Email" name="email" value="{{user.email}}">
                             <div class="input-group input-lg">
                                 <input type="password" placeholder="Password" class="form-control" name="password">
                                 <span class="input-group-addon">
@@ -81,8 +79,8 @@
                             </div>
                         </div>
                         <div class="footer text-center">
-                            <input type="submit" class="btn btn-primary btn-round btn-lg btn-block" />
-                            <h5><a href="{% url "forgotpassword" %}" class="link">Forgot Password?</a></h5>
+                            <input type="submit" class="btn btn-primary btn-round btn-lg btn-block" value="Change Password" />
+                            <h5><a href="{% url "login" %}" class="link">Login?</a></h5>
                         </div>
                     </form>
                 </div>
