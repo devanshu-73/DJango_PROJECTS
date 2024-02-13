@@ -1,0 +1,90 @@
+{% extends "app/index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <h2>View Member <small class="text-muted">Welcome to Digital Society</small></h2>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10"
+                    type="button">
+                    <i class="zmdi zmdi-edit"></i>
+                </button>
+
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i>
+                            Digital Society</a></li>
+                    <li class="breadcrumb-item active">View Member</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix profile-page">
+            <div class="col-lg-4 col-md-12">
+                <div class="card profile-header">
+                    <div class="body text-center">
+                        <div class="profile-image"> <img src="{{member.pic.url}}" alt="profile picture"> </div>
+                        <div>
+                            <h4 class="m-b-0">{{member.firstname}}</h4>
+                            <span class="job_post">{{member.userid.role}}</span>
+                            <p>{{member.blockno}} | {{member.houseno}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="{% url "allMember" %}" class="btn btn-primary text-white">Back</a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Account">About</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane body active" id="about">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p><strong>First Name :</strong> {{member.firstname}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Last Name :</strong> {{member.lastname}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Contact :</strong> {{member.contact}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>House No :</strong> {{member.blockno}} | {{member.houseno}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Role :</strong> {{member.userid.role}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Occupation :</strong> {{member.occupation}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Vehicle No. :</strong> {{member.vehicleno}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>No. of Family Member :</strong> {{member.familyno}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Tenant :</strong> {{member.tenant}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

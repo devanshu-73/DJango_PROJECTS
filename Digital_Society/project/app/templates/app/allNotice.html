@@ -1,0 +1,49 @@
+{% extends "app/index.html" %}
+
+{% block content %}
+    <section class="content home">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <h2>Notice<small class="text-muted">Welcome to Digital Society</small></h2>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+
+                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10"
+                        type="button">
+                        <i class="zmdi zmdi-plus"></i>
+                    </button>
+
+
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href=""><i class="zmdi zmdi-home"></i>
+                                Digital Society</a></li>
+                        <li class="breadcrumb-item">Notice</li>
+                        <li class="breadcrumb-item active">All Notice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <div class="row clearfix">
+                {% for i in notice %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card project_widget">
+                        <div class="pw_content">
+                            <div class="pw_header">
+                                <h6>{{i.notice_title}}</h6>
+                            </div>
+                            <div class="pw_meta">
+                                <p>{{i.notice_text|slice:":120"|safe}}...</p>
+                                <a href="{% url "viewNotice" k=i.id %}" class="btn btn-primary btn-simple btn-round">More</a> {{i.created_at}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+{% endblock content %}
