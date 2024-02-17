@@ -169,9 +169,6 @@ def change_profile(request):
          chairmanORmember.pic=request.FILES.get("pic") or chairmanORmember.pic
          if user.role.casefold()=="member":
             chairmanORmember.occupation=request.POST.get('occupation') or chairmanORmember.occupation
-            chairmanORmember.vehicleno=request.POST.get('vehicleno') or chairmanORmember.vehicleno
-            chairmanORmember.familyno=request.POST.get('familyno') or chairmanORmember.familyno
-            chairmanORmember.tenant=request.POST.get('tenant') or chairmanORmember.tenant
          chairmanORmember.save()
    
    return redirect(reverse('profile'))
@@ -283,7 +280,7 @@ def add_notice(request):
    else:
       return redirect('login')
    
-def allNotice(request):
+def all_notice(request):
    if 'email' in request.session:
       context=data(request.session['email'])
       notice=Notice.objects.all()

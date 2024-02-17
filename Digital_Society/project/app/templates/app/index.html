@@ -407,11 +407,11 @@
                 <div class="user-info">
                   <div class="image">
                     <a href="{% url 'profile' %}"
-                      ><img src="{{cid.pic.url}}" alt="User"
+                      ><img src="{{chairmanORmember.pic.url}}" alt="User"
                     /></a>
                   </div>
                   <div class="detail">
-                    <h4>{{cid.firstname}}</h4>
+                    <h4>{{chairmanORmember.firstname}}</h4>
                     <small>{{uid.role}}</small>
                   </div>
                 </div>
@@ -436,9 +436,11 @@
                   <li class="">
                     <a href="{% url 'all-member' %}">All Society Member</a>
                   </li>
+                 {% if user.role == 'chairman' %}
                   <li class="">
                     <a href="{% url 'add-member' %}">Add Member</a>
                   </li>
+                  {% endif %}
                 </ul>
               </li>
               <li class="">
@@ -447,21 +449,10 @@
                 >
                 <ul class="ml-menu">
                   <li class="">
-                    <a href="#">All Notice</a>
+                    <a href="{% url 'all-notice' %}">All Notice</a>
                   </li>
                   <li class="">
                     <a href="{% url 'add-notice' %}">Add Notice</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <a href="javascript:void(0);" class="menu-toggle"
-                  ><i class="zmdi zmdi-balance-wallet"></i
-                  ><span>Complaints</span></a
-                >
-                <ul class="ml-menu">
-                  <li class="">
-                    <a href="..\payment\all-payment.html">All Complaints</a>
                   </li>
                 </ul>
               </li>

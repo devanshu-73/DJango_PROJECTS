@@ -8,6 +8,8 @@ class User(models.Model):
     isActive = models.BooleanField(default = False)
     created_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.email
 class Chairman(models.Model):
     userid = models.ForeignKey(User,on_delete=models.CASCADE)
     firstname = models.CharField(max_length = 20)
@@ -17,6 +19,8 @@ class Chairman(models.Model):
     houseno = models.CharField(max_length=4)
     pic = models.FileField(upload_to="media/upload",default="default.png")
 
+    def __str__(self):
+        return self.firstname
 class Member(models.Model):
     userid = models.ForeignKey(User,on_delete=models.CASCADE)
     firstname = models.CharField(max_length = 20)
@@ -30,13 +34,19 @@ class Member(models.Model):
     vehical_details = models.CharField(max_length=20)
     pic = models.FileField(upload_to="media/upload",default="default.png")
 
+    def __str__(self):
+        return self.firstname
 
 class Notice(models.Model):
+    authority=models.CharField(max_length=20)
     notice_title = models.CharField(max_length=50)
-    notice_description = models.TextField()
-    pic = models.FileField(upload_to="upload",null=True,blank=True)
-    video = models.FileField(upload_to="videos",verbose_name="noticeclip",blank=True,null=True)
+    notice_text = models.TextField()
+    name=models.CharField(max_length=20)
+    designation=models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
 class Student(models.Model):
     firstname = models.CharField(max_length = 20)
     lastname = models.CharField(max_length=20)

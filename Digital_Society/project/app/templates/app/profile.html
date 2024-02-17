@@ -1,197 +1,163 @@
-﻿{% extends 'app/index.html' %} {% block content %}
-<section class="content home">
-  <div class="block-header">
-    <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-12">
-        <h2>
-          Profile <small class="text-muted">Welcome to Digital Society</small>
-        </h2>
-      </div>
-      <div class="col-lg-7 col-md-7 col-sm-12 text-right">
-        <button
-          class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10"
-          type="button"
-        >
-          <i class="zmdi zmdi-edit"></i>
-        </button>
+﻿{% extends "app/index.html" %}
 
-        <ul class="breadcrumb float-md-right">
-          <li class="breadcrumb-item">
-            <a href="..\dashboard\index.html"
-              ><i class="zmdi zmdi-home"></i> Digital Society</a
-            >
-          </li>
-          <li class="breadcrumb-item">Chairman</li>
-          <li class="breadcrumb-item active">Profile</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row clearfix profile-page">
-      <div class="col-lg-4 col-md-12">
-        <div class="card profile-header">
-          <div class="body text-center">
-            <div class="profile-image">
-              <img src="{{cid.pic.url}}" alt="" />
+{% load static %}
+
+{% block content %}
+
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <h2>Profile <small class="text-muted">Welcome to Digital Society</small></h2>
             </div>
-            <div>
-              <h4 class="m-b-0">
-                <strong>{{cid.firstname}}</strong> {{cid.lastname}}
-              </h4>
-              <span class="job_post">{{uid.role}}</span>
+            <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10"
+                    type="button">
+                    <i class="zmdi zmdi-edit"></i>
+                </button>
+
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i>
+                            Digital Society</a></li>
+                    <li class="breadcrumb-item active">Profile</li>
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-8 col-md-12">
-        <div class="card">
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#about"
-                >About</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#Account"
-                >Edit Profile</a
-              >
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane body active" id="about">
-              <h6>About Me</h6>
-              <hr />
-              <ul class="list-unstyled">
-                <li>
-                  <p><strong>Firstname :</strong> {{cid.firstname }}</p>
-                </li>
-                <li>
-                  <p><strong>Lastname:</strong>{{cid.lastname}}</p>
-                </li>
-                <li>
-                  <p><strong>Contact No:</strong>{{cid.contact}}</p>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-pane body" id="Account">
-              <form method="post" action="{% url 'change-password' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="email"
-                    value="{{uid.email}}"
-                    readonly
-                    disabled
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Current Password"
-                    name="currentpassword"
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="New Password"
-                    name="newpassword"
-                  />
-                </div>
-                <input
-                  type="submit"
-                  class="btn btn-info btn-round"
-                  value="Save Changes"
-                />
-              </form>
-              <hr />
-              <form
-                method="post"
-                action="{% url 'change-profile' %}"
-                enctype="multipart/form-data"
-              >
-                {% csrf_token %}
-                <div class="row clearfix">
-                  <div class="col-lg-6 col-md-12">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="First Name"
-                        name="firstname"
-                        value="{{cid.firstname}}"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-12">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Last Name"
-                        name="lastname"
-                        value="{{cid.lastname}}"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-12">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Contact"
-                        name="contact"
-                        value="{{cid.contact}}"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-12">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="blockno"
-                        name="blockno"
-                        value="{{cid.blockno}}"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-12">
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="houseno"
-                        name="houseno"
-                        value="{{cid.houseno}}"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <p><b>Upload Profile Picture</b></p>
-                    <div class="form-group">
-                      <input type="file" class="form-control" name="pic" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <input
-                      type="submit"
-                      class="btn btn-primary btn-round"
-                      value="Save Changes"
-                    />
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="container-fluid">
+        <div class="row clearfix profile-page">
+            <div class="col-lg-4 col-md-12">
+                <div class="card profile-header">
+                    <div class="body text-center">
+                        <div class="profile-image"> <img src="{{chairmanORmember.pic.url}}" alt=""> </div>
+                        <div>
+                            <h4 class="m-b-0">{{chairmanORmember.firstname}}</h4>
+                            <span class="job_post">{{user.role}}</span>
+                            <p>{{chairmanORmember.blockno}} | {{chairmanORmember.houseno}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="body">
+                        <div class="tab-pane body active" id="about">
+                            <h6>About</h6>
+                            <br>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p><strong>First Name :</strong> {{chairmanORmember.firstname}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Last Name :</strong> {{chairmanORmember.lastname}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Contact :</strong> {{chairmanORmember.contact}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>House No :</strong> {{chairmanORmember.blockno}} | {{chairmanORmember.houseno}}</p>
+                                </li>
+                                <li>
+                                    <p><strong>Role :</strong> {{user.role}}</p>
+                                </li>
+                                {% if user.role.casefold == "member" %}
+                                <li>
+                                    <p><strong>Occupation :</strong> {{chairmanORmember.occupation}}</p>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Account">Account</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+
+                        <div class="tab-pane body active" id="Account">
+                            <form method="post" action="{% url 'change-password' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" value={{user.email}}
+                                        disabled>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Current Password"
+                                        name="c_password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="New Password"
+                                        name="n_password">
+                                </div>
+                                <input type="submit" class="btn btn-info btn-round" value="Save Changes" />
+                            </form>
+                            <hr>
+                            <form action="{% url 'change-profile' %}" method="post" enctype="multipart/form-data" >
+                                {% csrf_token %}
+                                <div class="row clearfix">
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="firstname">Firstname</label>
+                                            <input type="text" class="form-control" placeholder="First Name"
+                                                name="firstname" value="{{chairmanORmember.firstname}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="lastname">Lastname</label>
+                                            <input type="text" class="form-control" placeholder="Last Name"
+                                                name="lastname" value="{{chairmanORmember.lastname}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="contact">Contact</label>
+                                            <input type="number" class="form-control" placeholder="Contact"
+                                                name="contact" value="{{chairmanORmember.contact}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="blockno">Block No.</label>
+                                            <input type="text" class="form-control" placeholder="Block No"
+                                                name="blockno" value="{{chairmanORmember.blockno}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="houseno">House No.</label>
+                                            <input type="text" class="form-control" placeholder="House No"
+                                                name="houseno" value="{{chairmanORmember.houseno}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group m-b-10">
+                                            <label for="pic">Profile Picture</label>
+                                            <input type="file" class="form-control" name="pic">
+                                        </div>
+                                    </div>
+                                    {% if user.role.casefold == "member" %}
+                                    <div class="col-sm-6 col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <label for="occupation">Occupation</label>
+                                            <input type="text" class="form-control" placeholder="Occupation" name="occupation" value="{{chairmanORmember.occupation}}">
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-info btn-round" value="Save Changes" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
-{% endblock %}
+
+{% endblock content %}

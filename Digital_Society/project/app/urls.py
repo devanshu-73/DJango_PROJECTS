@@ -16,8 +16,8 @@ urlpatterns = [
     path('edit-member/<int:pk>',views.edit_member,name="edit-member"),
     path('delete-member/<int:pk>',views.delete_member,name="delete-member"),
     path('add-notice/',views.add_notice,name="add-notice"),
-    path('allNotice/', views.allNotice, name="all-notice"),
-    path('viewNotice/<int:k>', views.viewNotice, name="viewNotice"),
+    path('all-notice/', views.all_notice, name="all-notice"),
+    path('view-notice/<int:k>', views.viewNotice, name="viewNotice"),
     # =============
     path('firstTimeLogin/', views.firstTimeLogin, name="firstTimeLogin"),
     path('viewMember/<int:k>', views.viewMember, name="viewMember"),
