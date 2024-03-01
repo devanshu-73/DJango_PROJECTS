@@ -1,0 +1,35 @@
+{% extends 'appoint/layout.html' %}
+
+{% block Title %}{{ title }}{% endblock %}
+
+{% block HeaderTitle %}
+    <a href="{% url 'doctor_appoints' appoint.doctor.pk %}">Back to appointments</a>
+{% endblock %}
+
+{% block BodyContent %}
+    <div class="make_appoint">
+        <h3>Make appointment at:</h3>
+        <p>{{ appoint.date|date:"j N Y" }}<br>
+        {{ appoint.start_time|time:"H:i" }} - {{ appoint.end_time|time:"H:i" }}</p>
+        <h3>Doctor:</h3>
+        <p>{{ appoint.doctor.get_full_name }}</p>
+
+        {% if appoint.has_not_customer %}
+            {% if not appoint.is_outdated %}
+                <h3>Customer:</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <p>{{ customer.get_full_name }}</p><br>
+                    <button class="btn btn-success" type="submit">Accept</button>
+                </form>
+            {% else %}
+                <h1>Appointment is outdated</h1>
+            {% endif %}
+        {% else %}
+            <h1>Appointment is occupied already</h1>
+        {% endif %}
+
+        <span>{{ error_text }}</span>
+        <a href="{% url 'doctor_appoints' appoint.doctor.pk %}" class="btn btn-warning" role="button">Choose another time</a>
+    </div>
+{% endblock %}

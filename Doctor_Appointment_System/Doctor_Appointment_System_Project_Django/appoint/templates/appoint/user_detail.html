@@ -1,0 +1,34 @@
+{% extends 'appoint/layout.html' %}
+
+{% block Title %}{{ customer.pk }}{% endblock %}
+
+{% block HeaderTitle %}
+    <a href="{% url 'index' %}">To main</a>
+{% endblock %}
+
+{% block BodyContent %}
+    <div class="user_detail">
+        <h2>{{ customer.first_name }}</h2>
+        <h2>{{ customer.last_name }}</h2><br>
+
+        {% if appointment_list_past %}
+            <h3>Past appointments:</h3>
+            {% for appoint in appointment_list_past %}
+                <h3>{{ appoint.date|date:"j N Y" }}, {{ appoint.start_time|time:"H:i" }} - {{ appoint.end_time|time:"H:i" }} : {{ appoint.doctor }} ({{ appoint.doctor.specialization }})</h3>
+            {% endfor %}
+        {% endif %}
+        {% if appointment_list_present %}
+            <h3>Today appointments:</h3>
+            {% for appoint in appointment_list_present %}
+                <h3>{{ appoint.date|date:"j N Y" }}, {{ appoint.start_time|time:"H:i" }} - {{ appoint.end_time|time:"H:i" }} : {{ appoint.doctor }} ({{ appoint.doctor.specialization }})</h3>
+            {% endfor %}
+        {% endif %}
+        {% if appointment_list_future %}
+            <h3>Future appointments:</h3>
+            {% for appoint in appointment_list_future %}
+                <h3>{{ appoint.date|date:"j N Y" }}, {{ appoint.start_time|time:"H:i" }} - {{ appoint.end_time|time:"H:i" }} : {{ appoint.doctor }} ({{ appoint.doctor.specialization }})</h3>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+{% endblock %}

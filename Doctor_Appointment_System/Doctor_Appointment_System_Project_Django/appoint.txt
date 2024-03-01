@@ -1,0 +1,24 @@
+Appoint project
+
+1. Add urls
+
+
+////
+
+
+1,5. Добавить страницу смены пароля для Moderator
+2. Добавить массовое создание appointment модератором
+3. Добавить разные html страницы
+
+
+ ///
+ Customer:
+    lewha - i.am.champ1
+    sbinalla - love_to_spin5
+ Doctor:
+    zakary - go.norris.23
+    toto - Ham.num.1
+    mat_pronto - sbinalla
+ Moderator:
+    jeant - mi55on_no_win
+    rossy - 2-deflect-win

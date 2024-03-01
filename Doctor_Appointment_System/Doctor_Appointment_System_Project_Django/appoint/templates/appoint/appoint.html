@@ -1,0 +1,50 @@
+{% extends 'appoint/layout.html' %}
+
+{% block Title %}{{ title }}{% endblock %}
+
+{% block HeaderTitle %}
+    <a href="{% url 'doctor_detail' doctor.pk %}">To doctor</a>
+{% endblock %}
+
+{% block BodyContent %}
+    <!-- Check every inner list in appoints_list. There's 5 lists, each list for each working day.-->
+    {% if appoints_list.0 or appoints_list.1 or appoints_list.2 or appoints_list.3 or appoints_list.4 %}
+        <div class="container">
+            {% for columns in appoints_list %}
+                <div class="col">
+                    <h4>{{ columns.0.date|date:"l" }}</h4>
+                    <p>{{ columns.0.date|date:"d N" }}</p>
+                    {% for appoint in columns %}
+                        <div class="row">
+                            {% if appoint.has_not_customer %}
+                                <div class="available_appoint">
+                                    {% if not appoint.is_outdated %}
+                                        {% if user.is_customer %}
+                                            <a href="{% url 'make_appoint' appoint.doctor.pk appoint.pk %}">{{ appoint.start_time|time:"H:i" }}</a>
+                                        {% else %}
+                                            <a href="{% url 'appoint_detail' doctor.pk appoint.pk %}">{{ appoint.start_time|time:"H:i" }}</a>
+                                        {% endif %}
+                                    {% else %}
+                                        <p>{{ appoint.start_time|time:"H:i" }}</p>
+                                    {% endif %}
+                                </div>
+                            {% else %}
+                                <div class="occupied_appoint">
+                                    <p>{{ appoint.start_time|time:"H:i" }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>There's none any appointments</h1>
+    {% endif %}
+
+    {% block ButtonChangeWeek %}
+        {% if is_nw_app_exists %}
+            <a href="{% url 'doctor_appoints_with_day' doctor.pk next_week %}" class="btn btn-info" role="button">Next week</a>
+        {% endif %}
+    {% endblock ButtonChangeWeek %}
+{% endblock %}

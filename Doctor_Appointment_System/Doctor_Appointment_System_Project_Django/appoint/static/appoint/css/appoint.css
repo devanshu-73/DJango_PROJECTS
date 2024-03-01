@@ -1,0 +1,172 @@
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #66cc99;
+    height: 100px;
+    border-bottom: 2px solid #669999;
+    flex-direction: row;
+
+    overflow: hidden;
+    white-space: initial;
+}
+
+.header_nav, .header_nav_account {
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header_nav a, .header_nav_account a {
+    font-size: 28px;
+
+    display: inline-block;
+    margin: 0 25px;
+
+    color: #0c3f66;
+    background-color: #66cc99;
+    text-decoration: none;
+
+    transition: color 150ms linear;
+    position: relative;
+}
+
+.header_nav a:hover, .header_nav_account a:hover {
+    color: #64150C;
+}
+
+.BodyContent {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 10px;
+}
+
+.body_content_form a, .body_content_form button {
+    margin: 15px 0 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    justify-content: stretch;
+    align-content: start;
+
+    grid-gap: 0 10px;
+}
+
+.col {
+    display: grid;
+
+    justify-content: stretch;
+    align-content: start;
+
+    grid-gap: 10px 0;
+}
+
+.col p, h4 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.available_appoint {
+    background: #EBDEF0;
+    border: 2px solid #669999;
+    border-radius: 15px;
+}
+
+.occupied_appoint {
+    background: #8A496B;
+    border: 2px solid #669999;
+    border-radius: 15px;
+}
+
+.index_doctor_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    height: calc(100vh - 124px);
+    
+    flex-flow: column wrap;
+
+    overflow: hidden;
+}
+
+
+.index_doctor_block {
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    border: 1px solid #c2d6d6;
+    border-radius: 12px;
+    min-width: 150px;
+}
+
+.index_doctor_block ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.index_doctor_block p {
+    margin-bottom: 10px;
+}
+
+.index_doctor_block li {
+    margin: 0 0 3px 10px;
+}
+
+.appoint_detail {
+    font-size: 20px;
+}
+
+.make_appoint {
+    font-size: 20px;
+}
+
+.make_appoint a {
+    margin-top: 10px;
+}
+
+.create_appoint_doctor button {
+    margin-top: 5px;
+}
+
+.doctor_detail h1, h4 {
+    margin: 0 0 8px;
+}
+
+.doctor_detail_info {
+    margin: 15px 0;
+    max-width: 650px;
+}
+
+.user_detail {
+    margin: 0 0 8px;
+}
+
+.dashboard_name {
+    text-align: center;
+}
+
+.dashboard_skills a {
+    margin-bottom: 5px;
+}
