@@ -8,7 +8,7 @@
   </head>
   <body>
     
-    <div class="container">
+    <div class="container mt-3">
       <form method = 'post' action = "{% url 'home' %}">
         {% csrf_token %}
         <div class="mb-3">
@@ -35,6 +35,7 @@
               <th scope="col">Email</th>
               <th scope="col">Password</th>
               <th scope="col">IsActive</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +46,10 @@
               <td>{{i.email}}</td>
               <td>{{i.password}}</td>
               <td>{{i.isActive}}</td>
+              <td>
+                <button class="btn btn-success">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
